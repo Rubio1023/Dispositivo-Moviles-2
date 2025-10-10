@@ -2,9 +2,11 @@ Parte principal de proyecto
 
 **Estructura principal**
 
-lib/
-├── features/               # MÓDULOS DE NEGOCIO (Modularidad por Feature)
-│   ├── auth/               # Autenticación, Login, Registro
+lib/features/# MÓDULOS DE NEGOCIO (Modularidad por Feature)
+auth/               # Autenticación, Login, Registro
+
+
+
 │   │   ├── data/           # Implementación: Llama a Firebase/API para Auth
 │   │   ├── domain/         # Reglas de negocio puras (ej. 'UserEntity')
 │   │   └── presentation/   # UI y BLoC/Cubit de Autenticación
