@@ -1,19 +1,75 @@
-# Dispositivo-Moviles-2
-Aquí se subirá la documentación de lo que se realice en dispositivos moviles
+Parte principal de proyecto 
 
-# grove_street
+**Estructura principal**
 
-A new Flutter project.
+lib/
+├── features/               # MÓDULOS DE NEGOCIO (Modularidad por Feature)
+│   ├── auth/               # Autenticación, Login, Registro
+│   │   ├── data/           # Implementación: Llama a Firebase/API para Auth
+│   │   ├── domain/         # Reglas de negocio puras (ej. 'UserEntity')
+│   │   └── presentation/   # UI y BLoC/Cubit de Autenticación
+│   │
+│   ├── products/           # Catálogo, Búsqueda, Detalles
+│   │   ├── data/
+│   │   ├── domain/         # Reglas de negocio (ej. 'GetAllProductsUseCase')
+│   │   └── presentation/   # UI y BLoC/Cubit de Productos
+│   │
+│   ├── cart/               # Carrito de Compras
+│   │   ├── data/
+│   │   ├── domain/         # Lógica de carrito (ej. 'RemoveFromCartUseCase')
+│   │   └── presentation/
+│   │
+│   ├── checkout/           # Proceso de Pago, Envíos
+│   │   ├── data/
+│   │   ├── domain/         # Lógica de creación de pedidos (ej. 'CreateOrderUseCase')
+│   │   └── presentation/
+│   │
+│   ├── orders/             # Historial y Detalle de Pedidos
+│   │   ├── data/
+│   │   ├── domain/         # Reglas para pedidos pasados
+│   │   └── presentation/
+│   │
+│   └── profile/            # Gestión de Perfil de Usuario
+│       ├── data/
+│       ├── domain/
+│       └── presentation/
+│
+├── core/                   # INFRAESTRUCTURA TÉCNICA (Compartido)
+│   ├── constants/          # Constantes globales (API Keys, URLs)
+│   ├── theme/              # Definición de estilos de Flutter
+│   ├── utils/              # Funciones de ayuda (formatters, logger)
+│   ├── errors/             # Clases de errores (Failure, Exception)
+│   └── injections/         # Inyección de dependencias (Configuración de GetIt/Riverpod)
+│
+├── shared/                 # COMPONENTES DE UI Y AYUDAS DE PRESENTACIÓN
+│   ├── widgets/            # Widgets de Flutter reutilizables (Button, CustomAppBar)
+│   └── helpers/            # Clases de ayuda a la UI (ej. 'ConnectivityHelper')
+│
+├── config/                 # CONFIGURACIÓN GENERAL
+│   ├── routes/             # Configuración del sistema de enrutamiento
+│   └── env/                # Variables de entorno (Dev, Prod)
+│
+├── main.dart               # Punto de entrada de la aplicación
+└── app.dart                # Widget principal (MaterialApp, ThemData)
 
-## Getting Started
+Esta es la estrutura general que maneja el proyecto actualmente en base a la arquitectura  (Clean Architecture) 
 
-This project is a starting point for a Flutter application.
+**la estructura manejada dentro de las carpetas es la siguiente** 
 
-A few resources to get you started if this is your first Flutter project:
+lib/features/products/
+├── data/
+│   ├── datasources/        # Fuentes de datos (ej. product_remote_datasource.dart)
+│   ├── models/             # Modelos de datos de la API (ej. product_model.dart - DTOs)
+│   └── repositories/       # Implementación del repositorio (ej. product_repository_impl.dart)
+│
+├── domain/
+│   ├── entities/           # Entidades de negocio PURAS (ej. product.dart)
+│   ├── repositories/       # Interfaces abstractas del repositorio (ej. product_repository.dart)
+│   └── usecases/           # Lógica de negocio (ej. get_all_products_usecase.dart)
+│
+└── presentation/
+    ├── cubit/              # Lógica de presentación y gestión de estado (ej. product_list_cubit.dart)
+    ├── pages/              # Pantallas completas (ej. product_list_page.dart)
+    └── widgets/            # Componentes de UI específicos del módulo (ej. product_card_widget.dart)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+esta es la estructura que se maneja de dentro de las carpetas corrspondientes el proyecto, este es un ejemplo de como esta organizada la estructura dentro de products o un modolu dentro de nuestro poryecto
