@@ -1,9 +1,13 @@
 Parte principal de proyecto 
 
 **Estructura principal**
+
 carpeta principal
+
 lib/
+
 features/ # MÓDULOS DE NEGOCIO (Modularidad por Feature)
+    
     auth/     # Autenticación, Login, Registro
         data/           # Implementación: Llama a Firebase/API para Auth
         domain/         # Reglas de negocio puras (ej. 'UserEntity')
@@ -35,6 +39,7 @@ features/ # MÓDULOS DE NEGOCIO (Modularidad por Feature)
         presentation/
 
 Carpeta al nivel de raiz de lib
+
 core/                   # INFRAESTRUCTURA TÉCNICA (Compartido)
     constants/          # Constantes globales (API Keys, URLs)
     theme/              # Definición de estilos de Flutter
@@ -57,7 +62,7 @@ Esta es la estrutura general que maneja el proyecto actualmente en base a la arq
 
 **la estructura manejada dentro de las carpetas es la siguiente** 
 
-lib/features/products/
+**lib/features/products/**
 
 data/
     datasources/        # Fuentes de datos (ej. product_remote_datasource.dart)
