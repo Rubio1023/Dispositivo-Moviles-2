@@ -1,0 +1,65 @@
+# ================================================================= #
+# .gitignore CONSOLIDADO (Raíz del proyecto: grove_street/)
+# ================================================================= #
+
+# 1. ESPECÍFICO DE LA ESTRUCTURA (Python y Rutas)
+###################################################################
+
+# Entorno Virtual de Python
+my_venv/ 
+.venv/ 
+
+# Carpetas de compilación de Flutter (ajustadas a la ruta 'frontend/')
+frontend/build/
+frontend/.dart_tool/
+
+# 2. FLUTTER / DART / PAQUETES
+###################################################################
+
+# Generados por el sistema de paquetes
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+**/doc/api/
+/coverage/
+
+# 3. COMPILACIÓN DE PLATAFORMAS (Ajustado a la ruta 'frontend/')
+###################################################################
+
+# Android - Artefactos de compilación
+frontend/android/app/debug/
+frontend/android/app/profile/
+frontend/android/app/release/
+
+# iOS - Caché de compilación
+frontend/ios/Flutter/.last_build_id
+
+# Symbolication y Obfuscation
+app.*.symbols
+app.*.map.json
+
+# 4. CACHÉ E IDEs
+###################################################################
+
+# Caché/Logs universales
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.build/
+.buildlog/
+.history
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+
+# VS Code (Si deseas ignorar la configuración de VS Code. Opcional)
+.vscode/
+
+# Eliminar entradas muy obsoletas de la plantilla original:
+.atom/
+.svn/
+.swiftpm/
+migrate_working_dir/
