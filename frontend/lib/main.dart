@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome.dart';
-import 'screens/login.dart';
-import 'screens/sign-up.dart';
-import 'screens/inicio.dart';
-import 'screens/cart.dart';
-import 'screens/profile.dart';
+import 'features/auth/presentation/screens/welcome.dart';
+import 'features/auth/presentation/screens/login.dart';
+import 'features/auth/presentation/screens/sign-up.dart';
+import 'features/home/presentation/screens/inicio.dart';
+import 'features/cart/presentation/screens/cart.dart';
+import 'features/profile/presentation/screens/profile.dart';
 
 void main() => runApp(const MyApp());
 
