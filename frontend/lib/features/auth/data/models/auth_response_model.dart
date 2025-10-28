@@ -1,6 +1,6 @@
 // lib/features/auth/data/models/auth_response_model.dart
 
-import '../../../domain/entities/user.dart'; // Importa la Entidad Pura del Dominio
+import '../../domain/entities/user.dart'; // Importa la Entidad Pura del Dominio
 
 class AuthResponseModel {
   final String token;

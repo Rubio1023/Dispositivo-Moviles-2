@@ -1,7 +1,7 @@
 // lib/features/products/data/datasources/product_remote_datasource.dart
 
 import '../../../../core/network/api_client.dart'; 
-import '../models/product_model.dart'; // El modelo DTO de la API
+import '../models/product_model.dart';
 
 abstract class ProductRemoteDataSource {
   Future<List<ProductModel>> getProducts();

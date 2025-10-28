@@ -1,4 +1,5 @@
 
+
 import 'package:flutter/material.dart';
 
 class Inicio extends StatefulWidget {
@@ -53,7 +54,7 @@ class _InicioState extends State<Inicio> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withAlpha(230),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: TextField(

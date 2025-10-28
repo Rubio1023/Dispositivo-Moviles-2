@@ -20,7 +20,8 @@ class _ProfileState extends State<Profile> {
 
   void _logout() async {
     await SessionManager.clear();
-    Navigator.pushReplacementNamed(context, '/');
+    if (!mounted) return;
+    Navigator.pushReplacementNamed(context, "/");
   }
 
   @override

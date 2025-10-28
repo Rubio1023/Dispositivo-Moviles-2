@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 import '../../domain/entities/product.dart';
 import '../../domain/repositories/product_repository.dart';
 import '../datasources/product_remote_datasource.dart';
-import '../../../../core/errors/exceptions.dart';
+import '../../../../core/errors/exception.dart';
 import '../../../../core/errors/failures.dart'; // Clases de error de dominio
 
 class ProductRepositoryImpl implements ProductRepository {

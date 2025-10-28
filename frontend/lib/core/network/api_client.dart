@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../errors/exception.dart';
 import '../constants/api_constants.dart';
 //import '../errors/exceptions.dart'; // Asegúrate de tener tu clase ServerException aquí
 

@@ -12,8 +12,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   provider: ^6.0.5
-
-  
+  equatable: ^2.0.5
+  dartz: ^0.10.1
   http: ^1.2.2
   shared_preferences: ^2.5.3
 

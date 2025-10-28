@@ -1,19 +1,25 @@
-class Product {
+// lib/features/products/domain/entities/product.dart
+
+import 'package:equatable/equatable.dart';
+
+class Product extends Equatable {
   final int id;
   final String name;
   final double price;
   final int stock;
-  final String? imageUrl;
+  final String? description; // <--- ¡Añadir este campo!
+  final String? imageUrl;    // (Si también lo estás usando)
 
-  Product({required this.id, required this.name, required this.price, required this.stock, this.imageUrl});
+  const Product({
+    required this.id,
+    required this.name,
+    required this.price,
+    required this.stock,
+    this.description, // <--- Definir como parámetro opcional (sin 'required')
+    this.imageUrl,
+  });
 
-  factory Product.fromJson(Map<String, dynamic> json) {
-    return Product(
-      id: json['id'] is int ? json['id'] : int.parse(json['id'].toString()),
-      name: json['name'] ?? '',
-      price: double.tryParse(json['price'].toString()) ?? 0.0,
-      stock: json['stock'] is int ? json['stock'] : int.tryParse(json['stock'].toString()) ?? 0,
-      imageUrl: json['image_url'] as String?,
-    );
-  }
+  @override
+  // Asegúrate de añadir los nuevos campos a props si usas Equatable
+  List<Object?> get props => [id, name, price, stock, description, imageUrl];
 }
