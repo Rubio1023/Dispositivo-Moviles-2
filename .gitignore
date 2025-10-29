@@ -1,47 +1,41 @@
-# ================================================================= #
-# .gitignore CONSOLIDADO (Raíz del proyecto: grove_street/)
-# ================================================================= #
+# .gitignore para un proyecto que utiliza Python y Flutter/Dart
+Entorno Virtual de Python
 
-# 1. ESPECÍFICO DE LA ESTRUCTURA (Python y Rutas)
-###################################################################
+my_venv/
+.venv/
 
-# Entorno Virtual de Python
-my_venv/ 
-.venv/ 
-
-# Carpetas de compilación de Flutter (ajustadas a la ruta 'frontend/')
-frontend/build/
-frontend/.dart_tool/
-
-# 2. FLUTTER / DART / PAQUETES
-###################################################################
-
-# Generados por el sistema de paquetes
+# Archivos compilados de Python
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
 **/doc/api/
 /coverage/
 
-# 3. COMPILACIÓN DE PLATAFORMAS (Ajustado a la ruta 'frontend/')
-###################################################################
+# Archivos de configuración específicos del entorno
+frontend/build/
+frontend/.dart_tool/
 
-# Android - Artefactos de compilación
+# Archivos de compilación de Flutter/Dart
 frontend/android/app/debug/
 frontend/android/app/profile/
 frontend/android/app/release/
-
-# iOS - Caché de compilación
 frontend/ios/Flutter/.last_build_id
 
-# Symbolication y Obfuscation
-app.*.symbols
-app.*.map.json
+# Archivos generados por el sistema operativo
+frontend/android/.gradle/
 
-# 4. CACHÉ E IDEs
-###################################################################
+# Archivos de configuración específicos del entorno
+frontend/android/local.properties
 
-# Caché/Logs universales
+# Archivos de compilación de Flutter/Dart
+frontend/ios/Flutter/.last_build_id
+frontend/ios/.symlinks/
+
+# Archivos generados por el sistema operativo
+app..symbols
+app..map.json
+
+# Archivos temporales y de caché comunes
 *.class
 *.log
 *.pyc
@@ -51,14 +45,14 @@ app.*.map.json
 .buildlog/
 .history
 
-# IntelliJ / Android Studio
+# Archivos de configuración de IDEs comunes
 *.iml
 .idea/
 
-# VS Code (Si deseas ignorar la configuración de VS Code. Opcional)
+
 .vscode/
 
-# Eliminar entradas muy obsoletas de la plantilla original:
+
 .atom/
 .svn/
 .swiftpm/

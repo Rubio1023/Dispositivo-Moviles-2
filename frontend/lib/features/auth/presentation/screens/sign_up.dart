@@ -33,7 +33,7 @@ class SignUp extends StatelessWidget {
                 child: Column(
                   children: [
                     const Text(
-                      "Welcome to Silent Hill",
+                      "Welcome to Grove Street",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
@@ -86,6 +86,7 @@ class SignUp extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
+                    // Botón de inicio de sesión tipo texto
                     TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/login');

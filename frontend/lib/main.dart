@@ -14,20 +14,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Silent Hill',
+      title: 'Grove Street',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.black,
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF001F54)),
       ),
-      //  Ruta inicial
+      //  Ruta inicial y rutas definidas para los botones de navegación
       initialRoute: '/',
       routes: {
         '/': (context) => const Welcome(),
         '/inicio': (context) => const Inicio(),
         '/login': (context) => const Login(),
-        '/signup': (context) => const SignUp(),
+        '/sign_up': (context) => const SignUp(),
         '/cart': (context) => const Cart(),
         '/profile': (context) => const Profile(),
       },
