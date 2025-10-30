@@ -5,7 +5,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Usamos LayoutBuilder para adaptar el diseño según el espacio disponible (parecido al mediaquery pero mejor)
+    // Usamos LayoutBuilder para adaptar el diseño según el espacio disponible (parecido al mediaquery)
     return LayoutBuilder(
       // constraints nos da las dimensiones a usar
       builder: (context, constraints) {
