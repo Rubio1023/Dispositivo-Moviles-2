@@ -57,21 +57,11 @@ class Welcome extends StatelessWidget {
                     children: [
                       // imagen del logo
                       Image.asset(
-                        'assets/logo.png',
+                        'assets/images/logo.png',
                         height: 200,
                       ),
-                      // Subtítulo
-                      const Text(
-                        'LA ROPA Y EL ESTILO QUE BUSCAS EN UN SOLO LUGAR.',
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 16,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      
-                      // Espacio entre texto y botones
-                      const SizedBox(height: 40), 
+                      // Espacio entre logo y botones
+                      const SizedBox(height: 60), 
                       
                       // Botón Principal (Iniciar Sesión)
                       // Envolvemos el botón en Padding para reducir su ancho efectivo y centrarlo

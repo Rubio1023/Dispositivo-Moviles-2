@@ -71,20 +71,6 @@ class Login extends StatelessWidget {
                       width: double.infinity, // Ocupa todo el ancho dentro de ConstrainedBox
                       decoration: const BoxDecoration(
                         color: Colors.white, 
-                        borderRadius: BorderRadius.only( // Esquinas redondeadas
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30),
-                          bottomLeft: Radius.circular(30), 
-                          bottomRight: Radius.circular(30),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 10, // Difuminado de la sombra
-                            spreadRadius: 2, // Extensión de la sombra
-                            offset: Offset(0, -3), // Sombra hacia arriba
-                          )
-                        ]
                       ),
                       // Usamos Padding para el contenido interno del formulario
                       padding: const EdgeInsets.fromLTRB(30, 25, 30, 0), 
@@ -102,7 +88,7 @@ class Login extends StatelessWidget {
                               color: Colors.black45,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 20),
                           // SUBTÍTULO
                           const Text(
                             "Escribe tu correo y contraseña para iniciar sesión",
@@ -112,7 +98,7 @@ class Login extends StatelessWidget {
                               color: Colors.black,
                             ),
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 25),
                           // Campo Correo Electrónico
                           TextField(
                             decoration: InputDecoration(
@@ -122,7 +108,7 @@ class Login extends StatelessWidget {
                               border: OutlineInputBorder(),
                             ),
                           ),
-                          const SizedBox(height: 15),
+                          const SizedBox(height: 30),
                           // Campo Contraseña
                           TextField(
                             obscureText: true,
@@ -149,7 +135,7 @@ class Login extends StatelessWidget {
                                 style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
                               ),
                             ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 15),
                           // Botón Registrarse
                           Row( // permite poner texto y boton en la misma linea
                             mainAxisAlignment: MainAxisAlignment.center, // Centra los elementos horizontalmente (uno al lado del otro)

@@ -37,8 +37,7 @@ class SignUp extends StatelessWidget {
                           color: Colors.black, 
                         ),
                       ),
-                    ),
-                    
+                    ),   
                     // Línea Divisoria (Alineada y Desplazada)
                     Align(
                       alignment: Alignment.bottomCenter,
@@ -54,7 +53,7 @@ class SignUp extends StatelessWidget {
                   ],
                 ),
               ), 
-              // 2. FORMULARIO (Parte Inferior - Expanded)
+              // FORMULARIO (Parte Inferior - Expanded)
               Expanded( // Ocupa todo el espacio restante disponible (75%)
                 child: Align(
                   alignment: Alignment.topCenter,
@@ -67,18 +66,7 @@ class SignUp extends StatelessWidget {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.white, 
-                        borderRadius: BorderRadius.circular(30),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 10,
-                            spreadRadius: 2,
-                            offset: Offset(0, -3),
-                          )
-                        ]
                       ),
-                      
-                      // 🎉 SOLUCIÓN: Usamos SingleChildScrollView aquí
                       child: SingleChildScrollView( 
                         padding: const EdgeInsets.fromLTRB(30, 25, 30, 20),
                         child: Column(
@@ -95,7 +83,6 @@ class SignUp extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 25),
-                            
                             // Campo NOMBRE
                             const TextField(
                               decoration: InputDecoration(
@@ -105,7 +92,6 @@ class SignUp extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 15),
-                            
                             // Campo APELLIDO
                             const TextField(
                               decoration: InputDecoration(
@@ -115,7 +101,6 @@ class SignUp extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 15),
-
                             // Campo CORREO ELECTRÓNICO
                             const TextField(
                               keyboardType: TextInputType.emailAddress,
@@ -136,8 +121,7 @@ class SignUp extends StatelessWidget {
                                 border: OutlineInputBorder(),
                               ),
                             ),
-                            const SizedBox(height: 30),
-                            
+                            const SizedBox(height: 30),      
                             // Botón REGISTRARSE
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
