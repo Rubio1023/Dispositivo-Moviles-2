@@ -1,8 +1,6 @@
-// lib/shared/widgets/bottom_nav_bar.dart (Anteriormente BottomNavBar)
-
 import 'package:flutter/material.dart';
 
-// Definición de colores (se recomienda importarlos de un archivo de estilos)
+// Definición de colores (se recomienda importarlos de un archivo de estilos) adicionar posteriormente
 const Color primaryColor = Color(0xFFFF9800);
 const Color darkOverlay = Color.fromARGB(245, 0, 0, 0);
 

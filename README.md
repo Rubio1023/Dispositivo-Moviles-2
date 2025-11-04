@@ -11,72 +11,36 @@ La estructura base del proyecto se encuentra dentro de la carpeta principal `lib
 
 ```plaintext
 lib/
+├── features/               # MÓDULOS DE NEGOCIO: Contiene toda la lógica por funcionalidad (Auth, Products, etc.)
+│   ├── [nombre_feature]/   # (Ej: auth, products, cart)
+│   │   ├── data/           # Implementación de la capa Data: Conecta la abstracción con las fuentes de datos reales.
+│   │   │   ├── datasources/ # Fuentes de datos: Clases que hacen peticiones HTTP, BD local, etc.
+│   │   │   └── repositories/ # Implementación del Contrato: Clase que implementa la interfaz de Domain.
+│   │   ├── domain/         # LÓGICA DE NEGOCIO PURA: Reglas, modelos y contratos de la aplicación.
+│   │   │   ├── entities/    # Modelos inmutables: Las Entidades de Negocio (ej. Event, User).
+│   │   │   ├── repositories/ # Contratos (Interfaces): Define lo que el Repositorio DEBE hacer (IAuthRepository).
+│   │   │   └── usecases/    # Reglas de Negocio: Coordina el flujo de datos para una tarea específica (ej. SignInUseCase).
+│   │   └── presentation/   # UI Y GESTIÓN DE ESTADO: La capa de Flutter que el usuario ve.
+│   │       ├── cubit/       # BLoC/Cubit y States: Lógica reactiva y definición de los estados de la UI.
+│   │       └── screens/     # Pantallas Completas: Widgets que componen las vistas principales (ej. Login, Inicio).
 │
-├── features/               # MÓDULOS DE NEGOCIO (por Feature)
-│   ├── auth/               # Autenticación, Login, Registro
-│   │   ├── data/           # Implementación (Supabase/API)
-|   |   |     ├── datasources/
-|   |   |     ├── archivo.dart
-|   |   |     ├── repositories/
-|   |   |     ├── archivo.dart
-│   │   ├── domain/         # Reglas de negocio puras (UserEntity)
-|   |   |     ├── entities/
-|   |   |     ├── archivo.dart
-|   |   |     ├── repositories/
-|   |   |     ├── archivo.dart
-|   |   |     ├── usecases/
-|   |   |     ├── archivo.dart
-│   │   ├── presentation/   # UI + BLoC/Cubit de Autenticación
-|   |   |     ├── cubit/
-|   |   |     ├── archivo.dart
-|   |   |     ├── screens/
-|   |   |     ├── archivo.dart
-|   |   |     ├── widgets/
-|   |   |     ├── archivo.dar
-│   │
-│   ├── products/           # Catálogo, Búsqueda, Detalles
-│   │   ├── data/
-│   │   ├── domain/         # Lógica de productos (GetAllProductsUseCase)
-│   │   └── presentation/
-│   │
-│   ├── cart/               # Carrito de Compras
-│   │   ├── data/
-│   │   ├── domain/         # Lógica de carrito (RemoveFromCartUseCase)
-│   │   └── presentation/
-│   │
-│   ├── checkout/           # Proceso de Pago y Envíos
-│   │   ├── data/
-│   │   ├── domain/         # Creación de pedidos (CreateOrderUseCase)
-│   │   └── presentation/
-│   │
-│   ├── orders/             # Historial y Detalle de Pedidos
-│   │   ├── data/
-│   │   ├── domain/
-│   │   └── presentation/
-│   │
-│   └── profile/            # Gestión de Perfil de Usuario
-│       ├── data/
-│       ├── domain/
-│       └── presentation/
+├── core/                   # INFRAESTRUCTURA TÉCNICA: Lógica Transversal que no cambia entre features.
+│   ├── constants/          # Valores Inmutables Globales: URLs base, API Keys, etc.
+│   ├── errors/             # Errores de Dominio y Data: Definición de las clases `Failure` y `Exception` personalizadas.
+│   ├── injections/         # Inyección de Dependencias (DI): Configuración e inicialización de GetIt/Riverpod.
+│   └── network/            # Cliente HTTP/Network: Configuración del cliente Dio/HTTP (interceptores, *headers*).
 │
-├── core/                   # INFRAESTRUCTURA TÉCNICA (compartido)
-│   ├── constants/          # Constantes globales (API Keys, URLs)
-│   ├── errors/              # Definición de estilos y temas
-│   ├── injections/              # Funciones auxiliares (loggers, formatters)
-│   ├── netword/             # Manejo de errores y excepciones
-│   ├── theme/         # Inyección de dependencias (GetIt/Riverpod)
-│   └── utils/         
+├── shared/                 # COMPONENTES REUTILIZABLES: Reutilización de UI y código auxiliar.
+│   ├── widgets/            # Widgets UI Comunes: Componentes que se usan en más de una feature (ej. `BottomNavBar`).
+│   └── utils/              # Utilidades Auxiliares: Funciones que no son UI ni lógica de negocio (ej. *formatters*, *validators*).
 │
-├── shared/                 # COMPONENTES REUTILIZABLES DE UI
-│   ├── widgets/            # Widgets globales (Botones, AppBars)
-│   └── helpers/            # Clases auxiliares (ConnectivityHelper)
+├── config/                 # CONFIGURACIÓN DE LA APLICACIÓN: Valores y lógica de configuración general.
+│   ├── routes/             # Navegación Centralizada: Sistema para definir y gestionar las rutas globales (GoRouter, etc.).
+│   └── theme/              # Temas y Estilos: Definición de `ThemeData`, paleta de colores y tipografías.
 │
-├── config/                 # CONFIGURACIÓN GENERAL
-│   ├── routes/             # Sistema de rutas (GoRouter, AutoRoute)
-│   └── env/                # Variables de entorno (Dev, Prod)
-│
-├── main.dart               # Punto de entrada de la aplicación
-└── app.dart                # Widget raíz (MaterialApp, ThemeData)
+├── main.dart               # Punto de Entrada: Inicializa la DI, llama a `runApp()`, y configura el widget raíz.
+└── services/               # Servicios Externos: Servicios de terceros ligeros (ej. Firebase, notificaciones).
+
 ```
 ## Los Principios Fundamentales de la Arquitectura Limpia en Flutter
 En esencia, la Arquitectura Limpia aboga por una clara separación entre la lógica de negocio y la interfaz de usuario. Esto se logra dividiendo la aplicación en tres capas principales:
