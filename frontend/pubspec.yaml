@@ -10,9 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Gestión de Estado y Datos
+  flutter_bloc: ^8.1.3 # Versión actual o la última compatible
+  equatable: ^2.0.5     # Para comparar objetos (Entidades y Estados)
   cupertino_icons: ^1.0.8
   provider: ^6.0.5
-  equatable: ^2.0.5
   dartz: ^0.10.1
   http: ^1.2.2
   shared_preferences: ^2.5.3
