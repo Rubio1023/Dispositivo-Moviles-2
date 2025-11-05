@@ -52,3 +52,5 @@ En esencia, la Arquitectura Limpia aboga por una clara separación entre la lóg
 **Capa de Presentación (Presentation Layer):** Es la capa más externa, responsable de todo lo que el usuario ve e interactúa. En Flutter, esta capa consiste en widgets y lógica de gestión de estado (por ejemplo, usando BLoC o Provider) para mostrar datos y capturar la entrada del usuario.
 
 La regla clave en la Arquitectura Limpia es la Regla de Dependencia, que establece que las dependencias del código fuente solo pueden apuntar hacia adentro. Esto significa que la capa de Presentación puede depender de la capa de Dominio, y la capa de Datos también puede depender de la capa de Dominio, pero la capa de Dominio no puede depender de ninguna de las capas externas.
+
+ahsdaskdhaskjd
